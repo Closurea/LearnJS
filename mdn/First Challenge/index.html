@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Random story generator</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <form class="nameSubmit">
+            <div class="textField">
+            <label for="text">Enter a name: </label>
+            <input type="text" name="name" id="text" autocomplete="additional-name"> 
+            </div>
+            <div class="buttons">
+            <input type="radio" id="us" name="country" value="us" checked>
+            <label for="us">US</label>
+            <input type="radio" id="uk" name="country" value="uk">
+            <label for="uk">UK</label>
+            </div>
+            <input type="submit" value="Generate random story">
+        </form>
+
+        <p class="output"></p>
+        <script src="./app.js"></script>
+    </body>
+</html>
