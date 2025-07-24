@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Switch - Case</title>
+    </head>
+    <body>
+        <label for="weather-type">Select the weather type today: </label>
+        <select id="weather-type">
+            <option value="">--Make a choice--</option>
+            <option value="sunny">Sunny</option>
+            <option value="rainy">Rainy</option>
+        </select>
+
+        <div class="content"></div>
+
+        <script>
+            let select = document.querySelector("#weather-type");
+            let txt = document.querySelector(".content");
+
+            select.addEventListener("change", weather);
+
+            function weather() {
+                let choice = select.value;
+                switch(choice) {
+                case "rainy":
+                    txt.textContent = "hava barani ast.";
+                    break;
+                case "sunny":
+                    txt.textContent = "Hava aftabi ast.";
+                    break;
+                default:
+                    txt.textContent = "";
+                    break;
+                }
+            }
+
+        </script>
+        
+    </body>
+</html>
