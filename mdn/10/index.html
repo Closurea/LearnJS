@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Theme changer</title>
+    </head>
+    <body>
+        <label for="color-selector">Select a theme: </label>
+        <select id="color-selector">
+            <option value="white">White</option>
+            <option value="black">Black</option>
+        </select>
+
+        <script>
+            let select = document.querySelector('#color-selector');
+            let body = document.querySelector("body");
+
+            select.addEventListener("change", () => {
+                let choice = select.value;
+
+                choice === 'white' ? makeWhite() : makeBlack();
+            })
+
+            function makeWhite() {
+                body.style.backgroundColor = 'white';
+                body.style.color = 'black';
+            }
+
+            function makeBlack() {
+                body.style.backgroundColor = 'black';
+                body.style.color = 'white';
+            }
+        </script>
+    </body>
+</html>

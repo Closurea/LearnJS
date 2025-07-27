@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Square root</title>
+    </head>
+    <body>
+        <input type="button" value="Calculate" id="cal">
+        <input type="button" value="Clear" id="clear">
+
+        <pre class="result"></pre>
+        <script>
+            let calBtn = document.querySelector("#cal");
+            let clearBtn = document.querySelector("#clear");
+            let res = document.querySelector(".result");
+
+            calBtn.addEventListener("click", generate);
+            clearBtn.addEventListener("click", () => {res.textContent = ""; calBtn.removeAttribute("disabled");})
+
+            function generate() {
+                for (i = 0; i <= 10; ++i) {
+                    const newResult = `${i} x ${i} = ${i * i}`;
+                    res.textContent += `${newResult}\n`;
+                }
+                res.textContent += `Finished!\n\n`;
+                calBtn.setAttribute("disabled", 'True');
+            }
+        </script>
+    </body>
+</html>
