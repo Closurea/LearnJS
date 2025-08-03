@@ -7,7 +7,36 @@
     </head>
     <body>
         <input class="numberInput" type="text">
-        <p></p>
+        <pre></pre>
     </body>
-    <script></script>
+    <script>
+        function squared(number) {
+            return number ** 2;
+        }
+        function cubed(number) {
+            return number ** 3;
+        }
+        function factorial(number) {
+            let result = 1;
+            for (let i = 2; i <= number; ++i){
+                result *= i;
+            }
+            return result;
+        }
+
+        const input = document.querySelector('input');
+        const txt = document.querySelector('pre');
+
+        input.addEventListener("change", () => {
+            let num = parseFloat(input.value);
+            if (isNaN(num)) {
+                txt.textContent = "You need to enter a number!";
+            }
+            else {
+                txt.textContent = `${num} squared is ${squared(num)}\n`;
+                txt.textContent += `${num} cubed is ${cubed(num)}\n`;
+                txt.textContent += `${num} factorial is ${factorial(num)}\n`;
+            }
+        })
+    </script>
 </html>
